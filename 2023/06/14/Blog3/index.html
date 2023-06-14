@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Stackelberg博弈模型简述 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这一段时间写论文使用到的方法是stackelberg博弈方法，但是网上对这个博弈方法介绍的内容非常少，今天我就在博客里简单的总结一下我学到的关于这个方法的相关知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stackelberg博弈模型简述">
+<meta property="og:url" content="http://example.com/2023/06/14/Blog3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这一段时间写论文使用到的方法是stackelberg博弈方法，但是网上对这个博弈方法介绍的内容非常少，今天我就在博客里简单的总结一下我学到的关于这个方法的相关知识。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-14T08:17:00.000Z">
+<meta property="article:modified_time" content="2023-06-14T08:26:02.041Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="stackelberg博弈模型">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/hhhh.jpg" class="js-avatar" src="/img/hhhh.jpg">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Chenkk</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Karmaczj" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/mu-zhi-ran-xi-30" title="zhihu">zhihu</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/stackelberg%E5%8D%9A%E5%BC%88%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">stackelberg博弈模型</a> <a href="/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">边缘计算</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.I hope to record all my study and life here, Chen&#39;s back garden</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Karmaczj" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/mu-zhi-ran-xi-30" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Blog3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/06/14/Blog3/" class="article-date">
+  	<time datetime="2023-06-14T08:17:00.000Z" itemprop="datePublished">2023-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Stackelberg博弈模型简述
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stackelberg%E5%8D%9A%E5%BC%88%E6%A8%A1%E5%9E%8B/" rel="tag">stackelberg博弈模型</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这一段时间写论文使用到的方法是stackelberg博弈方法，但是网上对这个博弈方法介绍的内容非常少，今天我就在博客里简单的总结一下我学到的关于这个方法的相关知识。</p>
+<span id="more"></span>
+
+<h1 id="Stackelberg博弈是什么？"><a href="#Stackelberg博弈是什么？" class="headerlink" title="Stackelberg博弈是什么？"></a>Stackelberg博弈是什么？</h1><p>Stackelberg博弈是一种博弈论中的博弈模型，命名来自德国经济学家Heinrich von Stackelberg。在Stackelberg博弈中，参与者被分为两个角色：领导者（leader）和追随者（follower）。这两个角色的行动顺序是固定的，领导者首先做出决策，然后追随者基于领导者的决策做出自己的决策。</p>
+<p>在Stackelberg博弈中，领导者的决策是公开的，即追随者可以了解领导者的行动选择。追随者在了解领导者的决策后，会根据自己的利益和目标制定自己的决策。</p>
+<p>Stackelberg博弈的核心是领导者和追随者之间的信息不对称。领导者可以利用自己的先知信息作出决策，而追随者只能基于领导者的决策做出反应。这种信息不对称使得领导者能够通过选择最优策略来最大化自己的收益，并且追随者的决策会受到领导者的影响。</p>
+<p>Stackelberg博弈常用于描述实际生活中的一些情境，例如市场竞争中的两家公司，政府与私营部门之间的关系等。在这些情境中，领导者通常具有更多的信息和资源，可以通过Stackelberg博弈模型来研究他们之间的互动和决策过程。</p>
+<h1 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h1><p>当谈论Stackelberg博弈时，一个经典的实例是市场上的两家公司之间的竞争。假设有两家公司，公司A和公司B，它们在同一市场上销售相似的产品。这里，公司A扮演领导者的角色，而公司B是追随者。</p>
+<p>公司A首先制定价格策略，然后公司B基于公司A的定价决策来确定自己的定价策略。公司A可以观察市场需求、成本结构、产品定价和其他因素，而公司B只能基于公司A的价格来做出反应。</p>
+<p>假设公司A意识到在市场上占据领先地位，并且拥有更大的市场份额和更强的品牌知名度。公司A通过选择价格来最大化自己的利润，而公司B则会根据公司A的定价选择自己的策略，例如选择与公司A的价格相匹配或采取低价策略来吸引消费者。</p>
+<p>在这个实例中，公司A作为Stackelberg博弈中的领导者，可以利用自己对市场的信息和竞争对手的反应做出最佳定价决策，以最大化自己的利益。而公司B作为追随者，则会根据公司A的定价策略来做出反应，尽可能适应市场并寻求自身的利益。</p>
+<p>这个实例说明了Stackelberg博弈中信息不对称的特点，领导者能够通过先知信息和先发优势来影响追随者的决策，从而在竞争中获得优势。</p>
+<h1 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h1><p>当涉及到编写代码来模拟Stackelberg博弈时，可以使用博弈论中的策略来定义领导者和追随者的行为。以下是一个简单的Python代码示例，模拟两个公司在定价方面的Stackelberg博弈：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Company</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, market_share, cost</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.market_share = market_share</span><br><span class="line">        self.cost = cost</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set_price</span>(<span class="params">self, leader_price=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="keyword">if</span> leader_price <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 领导者制定价格</span></span><br><span class="line">            price = self.calculate_optimal_price()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 追随者根据领导者的价格做出决策</span></span><br><span class="line">            price = self.calculate_follower_price(leader_price)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;self.name&#125;</span>定价为: <span class="subst">&#123;price&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calculate_optimal_price</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 根据市场份额、成本等因素计算最优价格</span></span><br><span class="line">        <span class="comment"># 这里只是一个简单的示例，实际计算可能更复杂</span></span><br><span class="line">        optimal_price = self.cost + self.market_share * <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> optimal_price</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calculate_follower_price</span>(<span class="params">self, leader_price</span>):</span><br><span class="line">        <span class="comment"># 追随者根据领导者的价格做出反应</span></span><br><span class="line">        <span class="comment"># 这里只是一个简单的示例，实际计算可能采用不同的策略</span></span><br><span class="line">        follower_price = leader_price - <span class="number">5</span></span><br><span class="line">        <span class="keyword">return</span> follower_price</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建两家公司的实例</span></span><br><span class="line">companyA = Company(<span class="string">&quot;公司A&quot;</span>, market_share=<span class="number">0.6</span>, cost=<span class="number">20</span>)</span><br><span class="line">companyB = Company(<span class="string">&quot;公司B&quot;</span>, market_share=<span class="number">0.4</span>, cost=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 公司A作为领导者先制定价格</span></span><br><span class="line">leader_price = companyA.set_price()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 公司B作为追随者根据领导者的价格做出决策</span></span><br><span class="line">companyB.set_price(leader_price)</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，<code>Company</code>类表示一个公司，其中<code>set_price</code>方法用于设置价格。<code>calculate_optimal_price</code>方法根据公司自身的市场份额和成本等因素计算最优价格，而<code>calculate_follower_price</code>方法用于根据领导者的价格计算追随者的定价策略。</p>
+<p>在代码的最后，创建了两家公司的实例（公司A和公司B），然后首先公司A作为领导者通过调用<code>set_price</code>方法制定价格，接着公司B作为追随者也通过调用<code>set_price</code>方法根据领导者的价格做出决策。</p>
+<p>这个简单的代码示例展示了Stackelberg博弈中领导者和追随者的行为模式，领导者先行动并制定策略，追随者基于领导者的策略做出反应。实际上，Stackelberg博弈可能涉及更多的决策和复杂的策略计算，具体的实现会根据具体情况而有所不同。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>上面的内容只是对stackelberg博弈模型的一个很简单的介绍，现在对这个博弈的理解可能还不是那么的深刻，因为对这个方向的相关研究也比较少。随着以后的学习我也会不断地完善这篇博客的内容。将完整的知识体系呈现出来。希望这个知识能对我以后的科研之路带来帮助吧。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/01/blog2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">边缘计算方向开源代码汇总</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        © 2023 Chenkk
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
